@@ -1,0 +1,18 @@
+/* @flow strict */
+
+class InnerClass {
+  static InnerStuff = {
+    innerStuffContents: { x: 34 },
+    innerStuffContentsEmpty: {}
+  };
+}
+
+export class TopLevelClass {
+  static MiddleLevelElements = {
+    stuff: InnerClass
+  };
+}
+
+export const ValueStartingWithUpperCaseLetter = "ValueStartingWithUpperCaseLetter";
+
+export default 42;

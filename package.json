@@ -1,0 +1,28 @@
+{
+  "name": "gentype",
+  "version": "3.26.0",
+  "private": true,
+  "description": "Use Reason values from Javascript: vanilla, or TypeScript/FlowType-annotated",
+  "license": "MIT",
+  "scripts": {
+    "build": "dune build",
+    "clean": "dune clean",
+    "test": "node ./scripts/run_integration_tests.js",
+    "install:examples": "(cd examples/typescript-react-example && npm install) & (cd examples/flow-react-example && npm install) & (cd examples/untyped-react-example && npm install) & (cd examples/commonjs-react-example && npm install)",
+    "build:examples": "(cd examples/typescript-react-example && npm run clean && npm run build) && (cd examples/flow-react-example && npm run clean && npm run build) & (cd examples/untyped-react-example && npm run clean && npm run build) & (cd examples/commonjs-react-example && npm run clean && npm run build)",
+    "dce": "node_modules/.bin/reanalyze -live-paths src/ext -dce-cmt `find _build -name byte`",
+    "preversion": "npm test",
+    "version": "node scripts/bump_version_module.js && git add -A src/",
+    "postversion": "git push && git push --tags"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "debug": "^4.1.0",
+    "reanalyze": "^1.6.0"
+  },
+  "author": "Cristiano Calcagno",
+  "bugs": {
+    "url": "https://github.com/cristianoc/gentype/issues"
+  },
+  "homepage": "https://github.com/cristianoc/gentype#readme"
+}

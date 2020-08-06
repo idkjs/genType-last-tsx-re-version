@@ -1,0 +1,22 @@
+*.DS_Store*
+*.merlin*
+*.bsb.lock*
+*.coverage
+bundledOutputs/
+_coverage/
+_esy/
+esy.lock/
+
+lib/
+node_modules/
+/_esy
+/_build
+/_release
+/genType.install
+/yarn-error.log
+
+# npm publish related stuff
+gentype-*.tgz
+dist/gentype-*.tgz
+dist/LICENSE
+dist/package.json
